@@ -2,7 +2,6 @@
 ## functions do
 
 ## Write a short comment describing this function
-library(MASS)
 makeCacheMatrix <- function(x = matrix()) {
 	m <- NULL
 	set <- function(y){
@@ -11,10 +10,7 @@ makeCacheMatrix <- function(x = matrix()) {
 	}
 	get <- function()x
 	setinv <- function(inverse)m <<- inverse
-	getinv <- function(){
-					inve <-ginv(x)
-					inve%*%x
-	}
+	getinv <- function()m
 	list(set=set,get=get,setinv=setinv,getinv=getinv)
 }
 
